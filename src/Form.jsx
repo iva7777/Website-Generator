@@ -62,7 +62,7 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
             <button className="submit-button" onClick={() => {
                     setIsLoading(true);
                     handleClick();
-                }}><span>Generate</span></button>
+                }}>Generate</button>
             <div className="spacer layer1"></div>
         </>
     )
