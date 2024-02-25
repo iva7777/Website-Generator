@@ -47,23 +47,26 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
 
     return (
         <>
-            <h1 className="title">
-                Generate a website about <br /> anything <br /> in the split of a second
-            </h1>
-            <section className="form container">
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'title')} placeholder='Title of website' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'description')} placeholder='Description' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'pages')} placeholder='What pages do you need' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'targetAudience')} placeholder='Target audience' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'font')} placeholder='Font' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'colors')} placeholder='Colors' />
-                <input type="text" onChange={(e) => handleOnchange(e.target.value, 'techStacks')} placeholder='Tech stack' />
-            </section>
-            <button className="submit-button" onClick={() => {
-                    setIsLoading(true);
-                    handleClick();
-                }}>Generate</button>
-            <div className="spacer layer1"></div>
+            <main>
+                <h1 className="title container">
+                    Generate a website about <br /> anything <br /> in the split of a second
+                </h1>
+                <section className="form container">
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'title')} placeholder='Title of website' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'description')} placeholder='Description' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'pages')} placeholder='What pages do you need' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'targetAudience')} placeholder='Target audience' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'font')} placeholder='Font' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'colors')} placeholder='Colors' />
+                    <input type="text" onChange={(e) => handleOnchange(e.target.value, 'techStacks')} placeholder='Tech stack' />
+                </section>
+                <button className="submit-button" onClick={() => {
+                        setIsLoading(true);
+                        handleClick();
+                    }}>Generate
+                </button>
+            </main>
+            <footer className="spacer layer1"></footer>
         </>
     )
 }
