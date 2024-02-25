@@ -29,6 +29,4 @@ export default App
 
 /*to-do:
 - button REGENERATE
-- make the design better
-- make smth like a service /search for architecture -> handleClick
-- loading animation */
+*/

@@ -244,14 +244,6 @@ section {
   transform: rotate(180deg);
 }
 
-.filler-section {
-  position: relative;
-  align-items: center;
-  min-height: 400px;
-  padding-top: 100px;
-  background-color: var(--clr-bg);
-}
-
 /* Title Backspace Effect */
 
 .word span {
