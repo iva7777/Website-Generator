@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useTypingText from "./customHooks/useTypingText";
 
 export default function Form({setGenerated, setRaw, setIsLoading }) {
+    const { word } = useTypingText(['anything', 'music', 'movies', 'anime', 'fashion'], 130, 20);
     const [prompt, setPrompt] = useState({
         title: '',
         description: '',
@@ -49,7 +51,9 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
         <>
             <main>
                 <h1 className="title container">
-                    Generate a website about <br /> anything <br /> in the split of a second
+                    Create a website about 
+                    <br /> { word } <br /> 
+                    in the split of a second
                 </h1>
                 <section className="form container">
                     <input type="text" onChange={(e) => handleOnchange(e.target.value, 'title')} placeholder='Title of website' />
@@ -63,7 +67,7 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
                 <button className="submit-button" onClick={() => {
                         setIsLoading(true);
                         handleClick();
-                    }}>Generate
+                    }}>Create
                 </button>
             </main>
             <footer className="spacer layer1"></footer>
