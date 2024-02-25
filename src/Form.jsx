@@ -33,7 +33,7 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': 'Bearer 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'
                 },
                 body: JSON.stringify(body)
             })
