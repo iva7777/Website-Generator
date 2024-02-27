@@ -33,7 +33,7 @@ export default function Form({setGenerated, setRaw, setIsLoading }) {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'Authorization': 'Bearer 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'
+                    'Authorization': import.meta.env.VITE_AUTH_KEY,
                 },
                 body: JSON.stringify(body)
             })
