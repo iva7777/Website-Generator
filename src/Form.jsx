@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useTypingText from "./customHooks/useTypingText";
+import toast, { Toaster } from "react-hot-toast"
 
 export default function Form({ setGenerated, setRaw, setIsLoading }) {
   const { word } = useTypingText(
@@ -20,6 +21,17 @@ export default function Form({ setGenerated, setRaw, setIsLoading }) {
   const handleOnchange = (text, input) => {
     setPrompt((prevState) => ({ ...prevState, [input]: text }));
   };
+
+  const checkIfPromptEmpty = (obj) => {
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (obj[key] !== "") {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 
   const handleClick = async () => {
     try {
@@ -103,12 +115,12 @@ export default function Form({ setGenerated, setRaw, setIsLoading }) {
         <button
           className="submit-button"
           onClick={() => {
-            setIsLoading(true);
-            handleClick();
+            checkIfPromptEmpty(prompt) ? notify() : handleClick() && setIsLoading(true);
           }}
         >
           Create
         </button>
+        <Toaster />
       </main>
       <footer className="spacer layer1"></footer>
     </>
