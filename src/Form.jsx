@@ -3,6 +3,7 @@ import useTypingText from "./customHooks/useTypingText";
 import toast, { Toaster } from "react-hot-toast"
 
 export default function Form({ setGenerated, setRaw, setIsLoading }) {
+  const notify = () => toast.error('Please fill out the form before you create');
   const { word } = useTypingText(
     ["anything", "music", "movies", "anime", "fashion"],
     130,
